@@ -1,27 +1,17 @@
 {
   "env": {
-    "es2021": true,
+    "es2020": true,
     "node": true,
     "jest": true
   },
-  "extends": [
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "airbnb",
-    "prettier",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["airbnb-base", "plugin:@typescript-eslint/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["prettier", "react", "@typescript-eslint", "eslint-plugin-import-helpers"],
+  "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers"],
   "rules": {
-    "prettier/prettier": "error",
     "camelcase": "off",
     "import/no-unresolved": "error",
     "@typescript-eslint/naming-convention": [
