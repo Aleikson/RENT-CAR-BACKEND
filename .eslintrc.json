@@ -17,6 +17,7 @@
     "@typescript-eslint/naming-convention": [
       "error",
       {
+        "newlinesBetween": "never",
         "selector": "interface",
         "format": ["PascalCase"],
         "custom": {
@@ -42,7 +43,7 @@
     "import-helpers/order-imports": [
       "warn",
       {
-        "newlinesBetween": "always",
+        "newlinesBetween": "ignore", // Alteração aqui
         "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
