@@ -1,12 +1,25 @@
 import { Category } from '../model/Category';
-import { ICategoriesRepository, IcreateCategoryDTO } from './ICategoriesRepository';
+import {
+  ICategoriesRepository,
+  IcreateCategoryDTO,
+} from './ICategoriesRepository';
 
 export class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[];
 
+  private static INSTACE: CategoriesRepository;
+
   constructor() {
     this.categories = [];
   }
+
+  public static getInstace(): CategoriesRepository {
+    if (!CategoriesRepository.INSTACE) {
+      CategoriesRepository.INSTACE = new CategoriesRepository();
+    }
+    return CategoriesRepository.INSTACE
+  }
+
   create({ name, description }: IcreateCategoryDTO): void {
     const category = new Category();
 
