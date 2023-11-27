@@ -7,17 +7,17 @@ import {
 export class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[];
 
-  private static INSTACE: CategoriesRepository;
+  private static INSTANCE: CategoriesRepository;
 
   constructor() {
     this.categories = [];
   }
 
-  public static getInstace(): CategoriesRepository {
-    if (!CategoriesRepository.INSTACE) {
-      CategoriesRepository.INSTACE = new CategoriesRepository();
+  public static getInstance(): CategoriesRepository {
+    if (!CategoriesRepository.INSTANCE) {
+      CategoriesRepository.INSTANCE = new CategoriesRepository();
     }
-    return CategoriesRepository.INSTACE
+    return CategoriesRepository.INSTANCE
   }
 
   create({ name, description }: IcreateCategoryDTO): void {
