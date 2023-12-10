@@ -1,0 +1,12 @@
+{
+    "type": "postgres",
+    "host": "5432",
+    "username": "docker",
+    "password": "1234",
+    "database": "rent",
+    "migrations": ["./src/dataBase/migrations/*.ts"],
+    "cli": {
+      "migrationsDir": "./src/dataBase/migrations"
+    }
+  }
+  
